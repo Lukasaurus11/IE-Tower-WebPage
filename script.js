@@ -20,6 +20,7 @@ const exploreFacility = (facilityName) => {
     const ieTowerContainer = document.getElementById("ie-tower-container");
     ieTowerContainer.innerHTML = "";
 
+    // Add the facility information to the exploration-container
     const explorationContainer = document.getElementById("exploration-container");
     explorationContainer.innerHTML = `<p>${facilitiesData[facilityName]}</p>`;
 
@@ -44,7 +45,10 @@ const exploreFacility = (facilityName) => {
 
 // Initialize the facilities
 const initializeFacilities = () => {
+    // Make the exploration-container visible as a flex container containing a button for each facility (in the facilitiesData object)
     const explorationContainer = document.getElementById("exploration-container");
+
+    // This first check is to set the display to flex in case we have clicked the return button
     if (explorationContainer.style.display === "block") {
         explorationContainer.style.display = "flex";
     }
@@ -55,13 +59,14 @@ const initializeFacilities = () => {
     }
 
     const ieTowerContainer = document.getElementById("ie-tower-container");
+
     // Add the IE tower image to the ie-tower div
     const ieTowerImage = document.createElement("img");
     ieTowerImage.src = `images/ie_tower.jpg`;
     ieTowerContainer.appendChild(ieTowerImage);
 };
 
-
+// Small function to reset the facilities to the initial state
 const resetFacilities = () => {
     const explorationContainer = document.getElementById("exploration-container");
     explorationContainer.innerHTML = "";
